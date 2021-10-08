@@ -5,12 +5,17 @@ module.exports = {
     mode: 'development',
     entry: './src/main.ts',
     devtool: 'inline-source-map',
+    watch: true,
     devServer: {
         static: {
             directory: path.join(__dirname, 'dist'),
         },
         compress: true,
         port: 9000,
+    },
+    watchOptions: {
+        aggregateTimeout: 200,
+        poll: 1000,
     },
     module: {
         rules: [
@@ -33,7 +38,10 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {from: "src/index.html", to: ""},
+                {from: "src/styles.css", to: ""},
+                {from: "src/favicon.png", to: ""},
             ],
         }),
     ]
+
 };

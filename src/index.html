@@ -1,10 +1,53 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Getting Started</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task Manager</title>
+
+    <link rel="icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;800&family=Roboto:wght@300;400&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+          rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <script src="bundle.js" defer></script>
 </head>
 <body>
-<script src="bundle.js"></script>
+<header>
+    <h1>Administrador de tareas</h1>
+</header>
+<main>
+    <label>
+        <input id="taskInput" type="text" placeholder="¿Qué necesitas hacer?">
+    </label>
+    <ul id="taskList">
+
+    </ul>
+    <div class="info">
+        <p id="tasksLeft">
+
+        </p>
+        <div>
+            <button value="all" id="allButton" class="button" disabled>Todas</button>
+            <button value="pending" id="pendingButton" class="button">Pendientes</button>
+            <button value="completed" id="completedButton" class="button">Completadas</button>
+        </div>
+    </div>
+</main>
+<div class="modal">
+    <div class="box">
+        <h2>¿Estás seguro de que deseas eliminar esta tarea?</h2>
+        <p>Una tarea para eliminar</p>
+        <div>
+            <button class="button large">Si</button>
+            <button class="button large">No</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
